@@ -26,7 +26,7 @@ Where {AppName} is the name of the application
 To create a controller run the following 
 
 ```
-yo strikeJS:ctrl {CtrlName}
+yo striker:ctrl {CtrlName}
 ```
 Where {CtrlName} is the name of the controller
 
@@ -34,7 +34,7 @@ Where {CtrlName} is the name of the controller
 To create a page run the following 
 
 ```
-yo strikeJS:page {PageName}
+yo striker:page {PageName}
 ```
 Where {PageName} is the name of the page
 
@@ -43,7 +43,7 @@ Where {PageName} is the name of the page
 To create a ui component run the following 
 
 ```
-yo strikeJS:page {UiName}
+yo striker:page {UiName}
 ```
 Where {UiName} is the name of the ui component
 
