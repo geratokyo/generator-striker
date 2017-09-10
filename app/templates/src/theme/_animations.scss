@@ -1,0 +1,59 @@
+.animation-s-fast{
+    -webkit-animation-duration: 0.3s;
+    -moz-animation-duration: 0.3s;
+    -o-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+}
+
+.animation-s-medium{
+    -webkit-animation-duration: 0.8s;
+    -moz-animation-duration: 0.8s;
+    -o-animation-duration: 0.8s;
+    animation-duration: 0.8s;
+}
+
+
+.animation-s-slow{
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.animation-d-smaller{
+    -webkit-animation-delay: 0.1s;
+    -moz-animation-delay: 0.1s;
+    -o-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+
+.animation-d-small{
+    -webkit-animation-delay: 0.40s;
+    -moz-animation-delay: 0.40s;
+    -o-animation-delay: 0.40s;
+    animation-delay: 0.40s;
+}
+
+.animation-d-medium{
+    -webkit-animation-delay: 0.6s;
+    -moz-animation-delay: 0.6s;
+    -o-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}
+
+
+@for $i from 0 through 10{
+    .delay-#{$i}{
+        -webkit-animation-delay: $i*100ms;
+        -moz-animation-delay: $i*100ms;
+        -o-animation-delay: $i*100ms;
+        animation-delay: $i*100ms;
+    }
+
+    .speed-#{$i}{
+        -webkit-animation-duration: $i*100ms;
+        -moz-animation-duration: $i*100ms;
+        -o-animation-duration: $i*100ms;
+        animation-duration: $i*100ms;
+    }
+}

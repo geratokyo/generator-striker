@@ -1,0 +1,52 @@
+/*************************/
+/////// GENERAL VARS //////
+/*************************/
+
+//TODO vars
+
+/*************************/
+/////// CUSTOM VARS /////// 
+/*************************/
+
+//TODO vars
+
+/*************************/
+///// TYPOGRAPHY VARS /////
+/*************************/
+
+//TODO vars
+
+/*************************/
+///// COMPONENT CODE //////
+/*************************/
+.<%= kebabCName %>-container{
+    
+}
+
+@include SmallDevice{
+    .<%= kebabCName %>-container{
+    }
+}
+
+
+@include MediumDevice{
+    .<%= kebabCName %>-container{
+    }
+}
+
+@include OnEmbedDevice(){
+    .<%= kebabCName %>-container{
+
+    }
+}
+
+@include MediumDevice{
+    .<%= kebabCName %>-container{
+    }
+}
+
+
+/*************************/
+/////// CUSTOM CODE /////// 
+/*************************/
+//TODO code

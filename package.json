@@ -1,0 +1,21 @@
+{
+  "name": "generator-striker",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gera.kourtidis@gmail.com",
+  "files": [
+    "generators"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "yeoman-generator": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.74"
+  }
+}
