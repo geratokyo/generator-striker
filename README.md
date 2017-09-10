@@ -4,7 +4,7 @@
 
 install Yeoman and generator-strikeJS globally
 
-```js
+```
 npm install yeoman -g
 npm install generator-striker -g
 ```
@@ -15,7 +15,7 @@ npm install generator-striker -g
 To create the project template run the following
 
 ##Striker
-```js
+```
 
 yo striker {AppName}
 
