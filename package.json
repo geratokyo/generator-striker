@@ -1,6 +1,6 @@
 {
   "name": "generator-striker",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "",
   "main": "app/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "generators"
   ],
   "repository": {
-    "type": "git", 
+    "type": "git",
     "url": "https://github.com/geratokyo/generator-strikergit"
   },
   "license": "ISC",
