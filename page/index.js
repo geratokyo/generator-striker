@@ -40,7 +40,7 @@ module.exports = class extends Generator {
   }
 
   _copyFiles(){
-    let dir = 'src/components/pages/'+ this.uCamelCName+'/';
+    let dir = 'src/pages/'+ this.uCamelCName+'/';
     let tempStr = {
         kebabCName:this.kebabCName, 
         uCamelCName:this.uCamelCName, 

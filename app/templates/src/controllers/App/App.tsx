@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Reducer} from './Reducer';
 import { createControllerView } from 'strikejs-react';
 import { Dialog } from '../../components/ui/Dialog/Dialog';
-import { SplashScreen } from '../../components/pages/Splashscreen/Splashscreen';
+import { SplashScreen } from '../../pages/Splashscreen/Splashscreen';
 import { Button } from '../../components/ui/Button/Button';
 import { AppProps, inAppState, WINDOW_VIEWS, inAppInitialState, AppInitState } from './StateAndProps';
 import { ACTIONS, TYPES } from './Actions';
