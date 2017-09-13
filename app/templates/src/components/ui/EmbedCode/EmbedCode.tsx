@@ -4,7 +4,7 @@ import { Button } from '../Button/Button';
 import { RES_URL } from '../../../config';
 import VerticalAligner from '../VerticalAligner/VerticalAligner';
 
-var jQuery = require("jquery");
+declare var jQuery;
 export interface EmbedCodeProps{
     embedded?:string;
     locale:Translation;

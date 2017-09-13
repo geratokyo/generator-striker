@@ -3,7 +3,7 @@ import {ACTIONS} from '../controllers/App/Actions';
 import {Translation} from '../models/models';
 import {FIREBASE_CONF} from '../config';
 
-var jQuery = require("jquery");
+declare var jQuery;
 declare var firebase;
 
 export class DataService{

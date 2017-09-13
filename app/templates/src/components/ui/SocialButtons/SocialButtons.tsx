@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Translation } from '../../../models/models';
 import { SHOW_INFO_DIALOG,SHOW_EMBED_DIALOG } from '../Dialog/Utils';
 
-var jQuery = require("jquery");
+declare var jQuery;
 
 
 export interface SocialButtonsProps{

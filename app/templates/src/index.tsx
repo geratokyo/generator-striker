@@ -8,7 +8,7 @@ import { ACTIONS as APP_ACTIONS } from './controllers/App/Actions';
 import { DialogProvider } from './components/ui/Dialog/DialogProvider';
 import { IS_MOBILE, IS_EMBED } from './config';
 
-var jQuery = require("jquery");
+declare var jQuery;
 
 (function(){
 

@@ -1,6 +1,6 @@
 import * as React from 'react'; 
-import { RES_URL } from '../../../config';
-import { Translation } from '../../../models/models';
+import { RES_URL } from '../../config';
+import { Translation } from '../../models/models';
 
 export interface SplashScreenProps{
     visible:boolean; 
