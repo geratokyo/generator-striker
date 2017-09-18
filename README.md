@@ -43,7 +43,7 @@ Where {PageName} is the name of the page
 To create a ui component run the following 
 
 ```
-yo striker:page {UiName}
+yo striker:ui {UiName}
 ```
 Where {UiName} is the name of the ui component
 
