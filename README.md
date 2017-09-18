@@ -5,7 +5,7 @@
 install Yeoman and generator-strikeJS globally
 
 ```
-npm install yeoman -g
+npm install yo -g
 npm install generator-striker -g
 ```
 
