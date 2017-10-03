@@ -19,29 +19,29 @@
 /*************************/
 ///// COMPONENT CODE //////
 /*************************/
-.<%= kebabCName %>-container{
+.<%= kebabCName %>{
     
 }
 
 @include SmallDevice{
-    .<%= kebabCName %>-container{
+    .<%= kebabCName %>{
     }
 }
 
 
 @include MediumDevice{
-    .<%= kebabCName %>-container{
+    .<%= kebabCName %>{
     }
 }
 
 @include OnEmbedDevice(){
-    .<%= kebabCName %>-container{
+    .<%= kebabCName %>{
 
     }
 }
 
 @include MediumDevice{
-    .<%= kebabCName %>-container{
+    .<%= kebabCName %>{
     }
 }
 
