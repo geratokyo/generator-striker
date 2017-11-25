@@ -1,0 +1,9 @@
+.graph-canvas{
+    height:300px; 
+}
+
+@include MediumDevice{
+    .graph-canvas{
+        height:400px;
+    }
+}

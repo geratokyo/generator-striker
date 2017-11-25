@@ -1,0 +1,25 @@
+
+
+.axis-canvas{
+    .axis.y{
+        path.domain{
+            display: none;
+        }
+        g.tick{
+            line{
+                stroke: #DCDCDC!important;
+            }
+        }
+    }
+
+    .axis.x{ 
+        g.tick{
+            line{
+                stroke: #DCDCDC!important;
+            }
+        }
+        path.domain{
+            stroke:#DCDCDC;
+        }
+    }
+}
