@@ -22,6 +22,40 @@ export const PAGES = {
 
 export const DP = new DialogProvider();
 
+/**
+ * Functions that will check the screen width 
+ */
+export var SCREEN_WIDTH = {
+    IS_SMALL: ()=>{ return window.innerWidth <= 650},
+    IS_MEDIUM: ()=>{ return window.innerWidth > 650 && window.innerWidth <= 992},
+    IS_LARGE: ()=>{ return window.innerWidth > 992}
+}
+
+/**
+ * Function to format number display
+ */
+export const NUMBER_FORMAT_FUNCTION= {
+    numberWithCommas: (x)=>{
+        let s = ",";
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, s);
+    },
+    currencyNumber: (x, symbol)=>{
+        x=parseInt(x).toFixed(0);
+        return x === "£-" ? "N/A": (x < 0 ? "-":"") + symbol + Math.abs(x).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    }, 
+    decimal:(x, decimalPoints)=>{
+        return parseFloat(x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")).toFixed(decimalPoints);
+    }, 
+    percent:(x)=>{
+        x = x*100;
+        return (x).toFixed(x < 1 ? 2 : 0) + "%";
+    },
+    seCurrency:(x, symbol)=>{
+        x=parseInt(x).toFixed(0);
+        return x === "£-" ? "N/A": (x < 0 ? "-":"+") + symbol + Math.abs(x).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    }
+}
+
 /*************************/
 /////// CUSTOM CODE /////// 
 /*************************/

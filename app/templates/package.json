@@ -17,7 +17,7 @@
     "strikejs-router": "^1.0.51"
   },
   "devDependencies": {
-    "@types/bluebird": "^3.5.10",
+    "@types/bluebird": "@3.5.10",
     "@types/greensock": "^1.15.32",
     "@types/lodash": "^4.14.72",
     "@types/react": "^15.6.1",

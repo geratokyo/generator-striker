@@ -3,37 +3,24 @@ import { IS_MOBILE } from '../../../config';
 
 
 export interface ButtonProps{
-    label:string|JSX.Element; 
     onClick:(e:any)=>void;
     className?:string;
 }
 
-export class Button extends React.Component<ButtonProps, any>{
-    constructor(props:ButtonProps){
-        super(props);
-    }
-    
-    onClick = (e:React.SyntheticEvent<any>)=>{
-        e.preventDefault();
-        this.props.onClick(e);
-    }
-
-    render(){
-        let props = this.props;
-        let cls = props.className || ""; 
-        return (
-            <div className={"btn-action " + cls} onClick={this.onClick} >
-                <div className="btn-label">
-                    {props.label}
-                </div>
+export const Button:React.SFC<ButtonProps> = (props)=>{
+    let cls = props.className || ""; 
+    return (
+        <div className={"button " + cls} onClick={props.onClick} >
+            <div className="button__label">
+                {props.children}
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 
+
 export interface LinkButtonProps{
-    label:string; 
     className?:string;
     href:string;
 }
@@ -45,13 +32,14 @@ function redirectTo(e:React.SyntheticEvent<any>){
         window.location.href = el.href;
     }
 }
-export function LinkButton(props:LinkButtonProps){
 
+export const LinkButton:React.SFC<LinkButtonProps> = (props)=>{
     let cls = props.className || ""; 
+    // {props.label}
     return (
-        <a href={props.href || ""} className={"btn-action " + cls} onTouchStart={redirectTo}>
-            <div className="btn-label">
-                {props.label}
+        <a href={props.href || ""} className={"button " + cls} onTouchStart={redirectTo}>
+            <div className="button__label">
+                {props.children}
             </div>
         </a>
     )
