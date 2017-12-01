@@ -30,7 +30,7 @@ export interface ElementTooltipState{
 
 
 export class ElementTooltip extends React.Component<ElementTooltipProps, ElementTooltipState>{
-    constructor(props:ElementTooltipProps){
+constructor(props:ElementTooltipProps){
         super(props);
         this.state = {contentVisible:false}
     }

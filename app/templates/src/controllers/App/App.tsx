@@ -46,12 +46,18 @@ class AppController extends React.Component<AppProps,inAppState>{
                             ( <SplashScreen 
                                 locale={locale}
                                 visible={state.currentView === WINDOW_VIEWS.SPLASH}>
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col s12 center">
+                                            <h1>Striker Generator</h1>
+                                            <h4>You are ready to start!!</h4>
+                                        </div>
+                                    </div>
+                                </div>
                             </SplashScreen>)
                         }
                     </div>
-                </div>
-                <Footer 
-                    locale={locale}/>   
+                </div>   
             </div>
         ); 
     }

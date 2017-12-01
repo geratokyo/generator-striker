@@ -10,7 +10,8 @@ $text-color:white;
 /*************************/
 /////// CUSTOM VARS /////// 
 /*************************/
- 
+
+$tooltip-widths: 40px 40px 40px; 
 
 /*************************/
 ///// TYPOGRAPHY VARS /////
@@ -21,144 +22,164 @@ $text-color:white;
 /*************************/
 ///// COMPONENT CODE //////
 /*************************/
-
-
-.element-tooltip{
+.element-tooltip-container{
     position:relative; 
     color: $text-color;
     vertical-align: middle;
+    .element-tooltip-content-container{
+        display: none;
+        position:absolute; 
+        width:nth($tooltip-widths-gen, 1); 
+        height: auto;
+        background-color:$background-color;
+        text-align: center;
+        color: $text-color;
+        vertical-align: middle;
+        .shown-element-container{
+            display: inline-block;
+        }
+        
+        a,i{
+            color: $text-color;
+        }
+    }
 
     &.trigger-on-hover:hover{
-        & > .element-tooltip__content{
+        & > .element-tooltip-content-container{
             display: block!important;
         }
     }
 
     &.trigger-on-click[data-visible="true"]{
-        & > .element-tooltip__content{
+        & > .element-tooltip-content-container{
             display: block!important;
         }
     }
-}
 
-
-.element-tooltip__content{
-    display: none;
-    position:absolute; 
-    width:nth($tooltip-widths-gen, 1); 
-    height: auto;
-    background-color:$background-color;
-    text-align: center;
-    color: $text-color;
-    vertical-align: middle;
-    .element-tooltip__main{
-        display: inline-block;
-    }
-    
-    a,i{
-        color: $text-color;
-    }
-}
-
-
-.element-tooltip--top-side{
-    .element-tooltip__content{
-        bottom:100%; 
-        left:50%; 
-        margin-left:-(nth($tooltip-widths-gen, 1)/2) - 0px; 
-    }
-
-    &.has-arrow{
-        & > .element-tooltip__content{
-            top:100%; 
-        }
-    }
-}
-
-.element-tooltip--bottom-side{
-    .element-tooltip__content{
-        top:100%; 
-        left:50%; 
-        margin-left:-(nth($tooltip-widths-gen, 1)/2) - 0px; 
-    }
-
-    &.has-arrow{
-        & > .element-tooltip__content{
+    &.top-side{
+        .element-tooltip-content-container{
             bottom:100%; 
+            left:50%; 
+            margin-left:-(nth($tooltip-widths-gen, 1)/2) - 0px; 
+        }
+        &.has-arrow{
+            & > .element-tooltip-content-container{
+                margin-bottom:10px;
+                &:after{
+                    content:' ';
+                    position:absolute; 
+                    top:100%; 
+                    left:50%; 
+                    margin-left:-(nth($triangle-widths, 1)) - 0px; 
+                    width: 0; 
+                    height: 0; 
+                    border-left: nth($triangle-widths, 1) solid transparent;
+                    border-right: nth($triangle-widths, 1) solid transparent;
+                    border-top: (nth($triangle-widths, 1)*3) solid $background-color;
+                }
+            }
+
         }
     }
-}
 
-.element-tooltip--top-side,
-.element-tooltip--bottom-side{
-    &.has-arrow{
-        & > .element-tooltip__content{
-            margin-bottom:10px;
-            &:after{
-                content:' ';
-                position:absolute; 
-                left:50%; 
-                margin-left:-(nth($triangle-widths, 1)) - 0px; 
-                width: 0; 
-                height: 0; 
-                border-left: nth($triangle-widths, 1) solid transparent;
-                border-right: nth($triangle-widths, 1) solid transparent;
-                border-top: (nth($triangle-widths, 1)*3) solid $background-color;
+    &.bottom-side{
+        .element-tooltip-content-container{
+            top:100%; 
+            left:50%; 
+            margin-left:-(nth($tooltip-widths-gen, 1)/2) - 0px; 
+        }
+
+        &.has-arrow{
+            & > .element-tooltip-content-container{
+                margin-bottom:10px;
+                &:after{
+                    content:' ';
+                    position:absolute; 
+                    bottom:100%; 
+                    left:50%; 
+                    margin-left:-(nth($triangle-widths, 1)) - 0px; 
+                    width: 0; 
+                    height: 0; 
+                    border-left: nth($triangle-widths, 1) solid transparent;
+                    border-right: nth($triangle-widths, 1) solid transparent;
+                    border-bottom: (nth($triangle-widths, 1)*3) solid $background-color;
+                }
             }
         }
-
-    }
-}
-
-.element-tooltip--right-side{
-    .element-tooltip__content{
-        top:50%; 
-        right:100%; 
-        margin-top:-(nth($tooltip-widths-gen, 1)/2) - 0px; 
     }
 
-    &.has-arrow{
-        & > .element-tooltip__content{
-            right:100%; 
-        }
-    }
-}
-
-.element-tooltip--left-side{
-    .element-tooltip__content{
-        top:50%; 
-        right:100%; 
-        margin-top:-(nth($tooltip-widths-gen, 1)/2) - 0px; 
-    }
-    &.has-arrow{
-        & > .element-tooltip__content{
+    &.right-side{
+        .element-tooltip-content-container{
+            top:50%; 
             left:100%; 
+            margin-top:-(nth($tooltip-widths-gen, 1)/2) - 0px; 
+            height:40px; 
+            width:auto;
+            margin-left:0px; 
         }
-    }
 
-}
-
-.element-tooltip--right-side,
-.element-tooltip--left-side{
-    &.has-arrow{
-        & > .element-tooltip__content{
-            margin-right:10px;
-            &:after{
-                content:' ';
-                position:absolute; 
-                top:50%; 
-                margin-top:-(nth($triangle-widths, 1)) - 0px; 
-                width: 0; 
-                height: 0; 
-                border-top: nth($triangle-widths, 1) solid transparent;
-                border-bottom: nth($triangle-widths, 1) solid transparent;
-                border-left: (nth($triangle-widths, 1)*3) solid $background-color;
+        &.has-arrow{
+            & > .element-tooltip-content-container{
+                margin-left:10px;
+                &:after{
+                    content:' ';
+                    position:absolute; 
+                    right:100%; 
+                    top:50%; 
+                    margin-top:-(nth($triangle-widths, 1)) - 0px; 
+                    width: 0; 
+                    height: 0; 
+                    border-top: nth($triangle-widths, 1) solid transparent;
+                    border-bottom: nth($triangle-widths, 1) solid transparent;
+                    border-right: (nth($triangle-widths, 1)*3) solid $background-color;
+                }
             }
         }
     }
 
+    &.left-side{
+        .element-tooltip-content-container{
+            top:50%; 
+            right:100%; 
+            margin-top:-(nth($tooltip-widths-gen, 1)/2) - 0px; 
+        }
+
+        &.has-arrow{
+            & > .element-tooltip-content-container{
+                margin-right:10px;
+                &:after{
+                    content:' ';
+                    position:absolute; 
+                    left:100%; 
+                    top:50%; 
+                    margin-top:-(nth($triangle-widths, 1)) - 0px; 
+                    width: 0; 
+                    height: 0; 
+                    border-top: nth($triangle-widths, 1) solid transparent;
+                    border-bottom: nth($triangle-widths, 1) solid transparent;
+                    border-left: (nth($triangle-widths, 1)*3) solid $background-color;
+                }
+            }
+        }
+    }
 }
 
 /*************************/
 /////// CUSTOM CODE /////// 
 /*************************/
+
+
+.element-tooltip-container{
+    &.settings-tooltip{
+        display: inline-block; 
+        width:40px; 
+        height:38px; 
+        text-align: center; 
+        line-height: 40px;
+        margin: 0px 0px 0px 10px;
+        & > i{
+            font-size: 40px;
+            vertical-align: middle;
+        }
+    }
+}

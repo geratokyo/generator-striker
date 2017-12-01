@@ -31,7 +31,7 @@ $font-sizes:15px 15px 15px;
 
 //letter spacing of the button label
 $letter-space:normal;
-
+$background-color:$color-3;
 
 $btn-widths: auto auto auto;
 $btn-heights: 42px 45px 45px;
@@ -42,27 +42,27 @@ $btn-heights: 42px 45px 45px;
 /*************************/
 .button{
 	@extend %no-user-select;
-    @extend %gradient-1;
 	display: inline-block;
-	padding:nth($paddings,1);
+    padding:nth($paddings,1);
+    background-color: $background-color;
     border:$border-style;
     text-align: center;
-    -webkit-transition: all 300ms ease-in;
-    -moz-transition: all 300ms ease-in;
-    -ms-transition: all 300ms ease-in;
-    -o-transition: all 300ms ease-in;
-    transition: all 300ms ease-in;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
+    -webkit-transition: all 100ms ease-in;
+    -moz-transition: all 100ms ease-in;
+    -ms-transition: all 100ms ease-in;
+    -o-transition: all 100ms ease-in;
+    transition: all 100ms ease-in;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
     width:nth($btn-widths,1);
     height:nth($btn-heights,1);
     line-height: nth($btn-heights, 1);
 	
 	&:hover {
 		cursor:pointer;
-		color:$color-2;
-        @extend %gradient-2;
+        color:$color-2;
+        background-color: lighten($background-color, 10%);
         .button__label{
             color:$label-hover-color;
         }
