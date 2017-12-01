@@ -27,7 +27,6 @@ $paginator-heights:30px 30px 30px;
 }
 
 .paginator__buttons{
-    @extend %gradient-1;
     font-family: $font-1;
     position: relative;
     display: inline-block;
