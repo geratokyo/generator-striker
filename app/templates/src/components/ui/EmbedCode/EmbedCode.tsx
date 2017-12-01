@@ -61,8 +61,9 @@ export class EmbedCode extends React.Component<EmbedCodeProps, EmbedCodeState>{
                     <div className="button-wrapper center">
                         <Button 
                             className="embed-copy-btn main black-text"
-                            label={props.locale.copyToClipboard}
-                            onClick={this.onCopyToClipboard} />
+                            onClick={this.onCopyToClipboard}>
+                            {props.locale.copyToClipboard}
+                        </Button>
                     </div>
             </div>
         )
