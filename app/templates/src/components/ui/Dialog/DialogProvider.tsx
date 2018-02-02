@@ -33,6 +33,7 @@ export class DialogProvider{
     }
 
     hide = () =>{
+        ReactDOM.unmountComponentAtNode(this.el);
         this.el.classList.remove("shown")
         this.el.innerHTML = "";
     }
