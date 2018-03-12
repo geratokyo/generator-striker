@@ -38,6 +38,8 @@ declare var jQuery;
         <Router history={hash}>
             <IndexRoute component={App} props={{dataService:DS,store}}>
             </IndexRoute>
+            <Route component={App} path={"/embedCode"} props={{ dataService: DS, store }}></Route>
+            <Route component={App} path={"/embed"} props={{ dataService: DS, store }}></Route>
         </Router>
     ,document.getElementById('SiteContainer'),()=>{
         DS.load().then((data)=>{

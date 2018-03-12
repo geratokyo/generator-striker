@@ -18,7 +18,7 @@ $client-logo-heights:19px 19px 33px;
 $campaign-logo-widths:167px 167px 363px;
 $campaign-logo-heights:100px 100px 152px;
 
-$splash-heights:100% 100% 380px;
+$splash-heights:100% 100% 100%;
 
 $btn-widths: 148px 148px 170px;
 $btn-heights: 46px 46px 52px;
@@ -89,16 +89,7 @@ $desc-line-height:1.3em;
         .button-wrapper{
             margin: 4ex 14ex;
         }
-
-        .table-container{
-            position:absolute; 
-            top:40%; 
-            margin-top:-199px;
-            left:50%; 
-            margin-left:-450px;
-            height:398px;
-            width:900px;
-        }
+        
 
         .client-logo-container{
             width:nth($client-logo-widths,3);
@@ -125,109 +116,3 @@ $desc-line-height:1.3em;
 /*************************/
 /////// CUSTOM CODE /////// 
 /*************************/
-
-.splashscreen-container{
-    .btn-action{
-        padding:0px;
-        width:nth($btn-widths,1);
-        height:nth($btn-heights,1);
-        vertical-align: middle; 
-        line-height: nth($btn-heights, 1);
-    }
-
-    .row{
-        margin-bottom:0px;
-    }
-    .splash-button-container{
-        text-align: center;
-    }
-
-    .button-wrapper{
-        margin-top:2ex;
-    }
-    
-    .campaign-logo-container{
-        width:nth($campaign-logo-widths,1);
-        height:nth($campaign-logo-heights,1); 
-        margin: 0 auto;
-        .campaign-logo{
-            height:100%; 
-            width:100%;
-        }
-    }
-
-    .splash-description-container{
-        font-size:nth($font-sizes,1); 
-        color:$text-color-1;
-        line-height: $desc-line-height;
-        text-align: center;
-        margin-top:2ex;
-    }
-
-    .table-container{
-        // overflow: hidden;
-    }
-
-    @include SmallDevice{
-        .btn-action{
-            width:nth($btn-widths,2);
-            height:nth($btn-heights,2);
-            line-height: nth($btn-heights, 2);
-        }
-
-        .splash-description-container{
-            margin-top:2em;
-            font-size:nth($font-sizes,2); 
-        }
-
-        .campaign-logo-container{
-            width:nth($campaign-logo-widths,2);
-            height:nth($campaign-logo-heights,2); 
-        }
-    }
-
-    @include MediumDevice{
-        height:nth($splash-heights,3);
-
-        .btn-action{
-            display: none;
-            width:nth($btn-widths,3);
-            height:nth($btn-heights,3);
-            line-height: nth($btn-heights, 3);
-        }
-
-        .splash-description-container{
-            margin-top:2em;
-            font-size:nth($font-sizes,3); 
-        }
-
-        .campaign-logo-container{
-            width:nth($campaign-logo-widths,3);
-            height:nth($campaign-logo-heights,3); 
-        }
-
-        .splash-button-container{
-            display: none;
-        }
-
-        
-    }
-}
-
-
-
-@include MediumDevice{
-    .splashscreen-wrapper{
-        position: relative;
-        width:100%; 
-        float: left; 
-        height:nth($splash-heights,3);
-    }
-}
-
-@include OnMobileLandscape(){
-    .campaign-logo-container{
-        width: 80px!important; 
-        height:70px!important;
-    }
-}

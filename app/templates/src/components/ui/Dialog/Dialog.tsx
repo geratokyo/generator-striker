@@ -1,60 +1,80 @@
 import * as React from 'react';
+import * as Promise from 'bluebird';
 import VerticalAligner from '../VerticalAligner/VerticalAligner';
-export interface DialogProps{
-    onClose?:Function;
-    className?:string;
+export interface DialogProps {
+    close?: () => void;
+    className?: string;
 }
 
-export interface DialogState{
+export interface DialogState {
 }
 
-export class Dialog extends React.Component<DialogProps,DialogState>{
-    constructor(props:DialogProps){
-        super(props); 
-    }
-    
-    // shouldComponentUpdate(props:DialogProps,state:DialogState){
-    //     return props.visible !== this.props.visible ||
-    //         props.title !== this.props.title;
-    // }
-    
+export class Dialog extends React.Component<DialogProps, DialogState>{
+    backdropEl: HTMLDivElement;
+    contentWrapperEl: HTMLDivElement;
 
-    onClose = ()=>{
-        let el:HTMLDivElement = this.refs['backdrop'] as HTMLDivElement; 
-        let el1:HTMLDivElement = this.refs['content-wrapper'] as HTMLDivElement; 
-        el.classList.remove("animated", "fadeIn");
-        el1.classList.remove("animated", "fadeInUp");
-
-        el.classList.add("animated", "fadeOut")
-        el1.classList.add("animated", "fadeOutDown")
-        setTimeout(()=>{
-            this.props.onClose()
-        },700)
+    constructor(props: DialogProps) {
+        super(props);
     }
 
-    render(){
+    close = (ev?:React.SyntheticEvent<any>) => {
+        return new Promise((res, rej) => {
+            this.animteExit(); 
+
+            setTimeout(() => {
+                if(ev){
+                    rej(new Error("dialog rejected"))
+                }else{
+                    res(true);
+                }
+
+            }, 700)
+        })
+    }
+
+    animteExit = ()=>{
+        this.backdropEl.classList.remove("animated", "fadeIn");
+        this.contentWrapperEl.classList.remove("animated", "fadeInUp");
+
+        this.backdropEl.classList.add("animated", "fadeOut");
+        this.contentWrapperEl.classList.add("animated", "fadeOutDown");
+    }
+
+    render() {
         let clz = this.props.className || '';
         return (
-            <div className={"dialog-container " + clz}>
-                <div className="dialog-backdrop animated fadeIn" 
-                    onClick={ this.onClose }
-                    ref="backdrop"></div>
+            <div className={"dialog " + clz}>
+                <div className="dialog__backdrop animated fadeIn"
+                    onClick={this.props.close}
+                    id="DialogBackdrop"
+                    ref={e => this.backdropEl = e}></div>
                 <VerticalAligner>
-                    <div className="dialog-content-wrapper animated fadeInUp"
-                        ref="content-wrapper">
-                        <div className="close-button-container close-button" onClick={ this.onClose }>
-                            <i className="icon-close"></i>
+                    <div className="dialog__wrapper animated fadeInUp"
+                        ref={e => this.contentWrapperEl = e}>
+                        <div className="dialog__close-button" 
+                            id="DialogCloseButton"
+                            onClick={this.props.close}>
+                            <i className="icon-ls-close"></i>
                         </div>
-                        <div className="content-wrapper">
-                            <VerticalAligner>
-                                <div className="content-container">
-                                    {this.props.children}
-                                </div>
-                            </VerticalAligner>
-                        </div>
+                        <main className="dialog__content">
+                            {this.props.children}
+                        </main>
                     </div>
                 </VerticalAligner>
             </div>
         );
     }
+}
+
+export interface DialogNormalLayoutProps {
+    className?: string;
+}
+
+export const DialogNormalLayout: React.SFC<DialogNormalLayoutProps> = (props) => {
+    let cls = props.className || "";
+    return (
+        <div className={"dialog-layout container-fluid " + cls}>
+            {props.children}
+        </div>
+    )
 }
