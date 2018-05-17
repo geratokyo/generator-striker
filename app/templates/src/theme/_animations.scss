@@ -1,44 +1,9 @@
-.animation-s-fast{
-    -webkit-animation-duration: 0.3s;
-    -moz-animation-duration: 0.3s;
-    -o-animation-duration: 0.3s;
-    animation-duration: 0.3s;
-}
 
-.animation-s-medium{
-    -webkit-animation-duration: 0.8s;
-    -moz-animation-duration: 0.8s;
-    -o-animation-duration: 0.8s;
-    animation-duration: 0.8s;
-}
-
-
-.animation-s-slow{
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s;
-    -o-animation-duration: 1s;
-    animation-duration: 1s;
-}
-
-.animation-d-smaller{
-    -webkit-animation-delay: 0.1s;
-    -moz-animation-delay: 0.1s;
-    -o-animation-delay: 0.1s;
-    animation-delay: 0.1s;
-}
-
-.animation-d-small{
-    -webkit-animation-delay: 0.40s;
-    -moz-animation-delay: 0.40s;
-    -o-animation-delay: 0.40s;
-    animation-delay: 0.40s;
-}
-
-.animation-d-medium{
-    -webkit-animation-delay: 0.6s;
-    -moz-animation-delay: 0.6s;
-    -o-animation-delay: 0.6s;
-    animation-delay: 0.6s;
+%default-animation{
+    -webkit-transition:all 1s cubic-bezier(0,0,0,1);
+    -moz-transition:all 1s cubic-bezier(0,0,0,1);
+    -o-transition:all 1s cubic-bezier(0,0,0,1);
+    transition:all 1s cubic-bezier(0,0,0,1);
 }
 
 

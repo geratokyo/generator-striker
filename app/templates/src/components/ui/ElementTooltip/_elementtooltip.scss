@@ -3,9 +3,9 @@
 /*************************/
 
 $tooltip-widths-gen: 40px 40px 40px; 
-$background-color: $color-1; 
+$background-color: $color-2; 
 $triangle-widths: 5px 5px 5px;
-$text-color:white;
+$text-color:$color-1;
 
 /*************************/
 /////// CUSTOM VARS /////// 
@@ -22,17 +22,18 @@ $tooltip-widths: 40px 40px 40px;
 /*************************/
 ///// COMPONENT CODE //////
 /*************************/
-.element-tooltip-container{
+.element-tooltip{
     position:relative; 
     color: $text-color;
     vertical-align: middle;
-    .element-tooltip-content-container{
+    .element-tooltip__content{
         display: none;
         position:absolute; 
         width:nth($tooltip-widths-gen, 1); 
         height: auto;
         background-color:$background-color;
         text-align: center;
+        margin-top:-2px;
         color: $text-color;
         vertical-align: middle;
         .shown-element-container{
@@ -45,25 +46,25 @@ $tooltip-widths: 40px 40px 40px;
     }
 
     &.trigger-on-hover:hover{
-        & > .element-tooltip-content-container{
+        & > .element-tooltip__content{
             display: block!important;
         }
     }
 
     &.trigger-on-click[data-visible="true"]{
-        & > .element-tooltip-content-container{
+        & > .element-tooltip__content{
             display: block!important;
         }
     }
 
     &.top-side{
-        .element-tooltip-content-container{
+        .element-tooltip__content{
             bottom:100%; 
             left:50%; 
             margin-left:-(nth($tooltip-widths-gen, 1)/2) - 0px; 
         }
         &.has-arrow{
-            & > .element-tooltip-content-container{
+            & > .element-tooltip__content{
                 margin-bottom:10px;
                 &:after{
                     content:' ';
@@ -83,14 +84,14 @@ $tooltip-widths: 40px 40px 40px;
     }
 
     &.bottom-side{
-        .element-tooltip-content-container{
+        .element-tooltip__content{
             top:100%; 
             left:50%; 
             margin-left:-(nth($tooltip-widths-gen, 1)/2) - 0px; 
         }
 
         &.has-arrow{
-            & > .element-tooltip-content-container{
+            & > .element-tooltip__content{
                 margin-bottom:10px;
                 &:after{
                     content:' ';
@@ -109,7 +110,7 @@ $tooltip-widths: 40px 40px 40px;
     }
 
     &.right-side{
-        .element-tooltip-content-container{
+        .element-tooltip__content{
             top:50%; 
             left:100%; 
             margin-top:-(nth($tooltip-widths-gen, 1)/2) - 0px; 
@@ -119,7 +120,7 @@ $tooltip-widths: 40px 40px 40px;
         }
 
         &.has-arrow{
-            & > .element-tooltip-content-container{
+            & > .element-tooltip__content{
                 margin-left:10px;
                 &:after{
                     content:' ';
@@ -138,14 +139,14 @@ $tooltip-widths: 40px 40px 40px;
     }
 
     &.left-side{
-        .element-tooltip-content-container{
+        .element-tooltip__content{
             top:50%; 
             right:100%; 
             margin-top:-(nth($tooltip-widths-gen, 1)/2) - 0px; 
         }
 
         &.has-arrow{
-            & > .element-tooltip-content-container{
+            & > .element-tooltip__content{
                 margin-right:10px;
                 &:after{
                     content:' ';

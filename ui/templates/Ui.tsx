@@ -10,6 +10,7 @@ export interface <%= uCamelCName %>State{
 }
 
 export class <%= uCamelCName %> extends React.Component<<%= uCamelCName %>Props, <%= uCamelCName %>State>{
+    el:HTMLDivElement;
     constructor(p:<%= uCamelCName %>Props){
         super(p);
     }
@@ -19,7 +20,7 @@ export class <%= uCamelCName %> extends React.Component<<%= uCamelCName %>Props,
             state = this.state,
             cls = this.props.className || "";
         return (
-            <div className={"<%= kebabCName %> " + cls}  ref="<%= kebabCName %>-element">
+            <div className={"<%= kebabCName %> " + cls} ref={e=> this.el= e}>
                 
             </div>
         )

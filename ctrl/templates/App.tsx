@@ -8,6 +8,7 @@ import { ACTIONS, TYPES } from './Actions';
 export const STATE_KEY = '<%= camelCName %>';
 
 class <%= uCamelCName %>Controller extends React.Component<<%= uCamelCName %>Props,in<%= uCamelCName %>State>{
+    this.el:HTMLDivElement; 
     constructor(props){
         super(props);
         this.state = in<%= uCamelCName %>InitialState;
@@ -21,7 +22,7 @@ class <%= uCamelCName %>Controller extends React.Component<<%= uCamelCName %>Pro
             props = this.props;
         
         return (
-            <div className="<%= kebabCName %>-container">
+            <div className="<%= kebabCName %>" ref={ e => this.el = e}>
             </div>
         ); 
     }

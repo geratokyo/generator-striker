@@ -1,8 +1,8 @@
 /*************************/
 /////// GENERAL VARS //////
 /*************************/
-$background-image-sm:url(../img/_mobile/background.jpg);
-$background-image-md:url(../img/_desktop/background.jpg);
+$background-image-sm:url($res-url + "../img/_mobile/background.jpg");
+$background-image-md:url($res-url + "../img/_desktop/background.jpg");
 
 $text-color-1:white;
 

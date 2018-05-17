@@ -26,8 +26,8 @@ export const DP = new DialogProvider();
  * Functions that will check the screen width 
  */
 export var SCREEN_WIDTH = {
-    IS_SMALL: ()=>{ return window.innerWidth <= 650},
-    IS_MEDIUM: ()=>{ return window.innerWidth > 650 && window.innerWidth <= 992},
+    IS_SMALL: ()=>{ return window.innerWidth <= 560},
+    IS_MEDIUM: ()=>{ return window.innerWidth > 560 && window.innerWidth <= 992},
     IS_LARGE: ()=>{ return window.innerWidth > 992}
 }
 

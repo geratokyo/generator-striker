@@ -29,9 +29,12 @@
 .app-container{
 }
 
-@include OnEmbedDevice(){
-
+@include SmallDevice{
 }
 
 @include MediumDevice{
+}
+
+@include OnEmbedDevice{
+
 }

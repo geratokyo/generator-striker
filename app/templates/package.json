@@ -10,17 +10,17 @@
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.5.1",
-    "lodash": "^4.17.4",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "lodash": "^4.17.10",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "strikejs-react": "^2.1.1",
     "strikejs-router": "^1.0.51"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.19",
-    "@types/lodash": "^4.14.92",
-    "@types/react": "^16.0.34",
-    "@types/react-dom": "^16.0.3",
+    "@types/lodash": "^4.14.108",
+    "@types/react": "^16.3.14",
+    "@types/react-dom": "^16.0.5",
     "amdefine": "^1.0.1",
     "awesome-typescript-loader": "^3.2.2",
     "css-loader": "^0.28.4",

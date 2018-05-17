@@ -47,3 +47,11 @@ yo striker:ui {UiName}
 ```
 Where {UiName} is the name of the ui component
 
+##Presentation Component (Functional component)
+To create a ui component run the following 
+
+```
+yo striker:pr {PrName}
+```
+Where {PrName} is the name of the functional component
+

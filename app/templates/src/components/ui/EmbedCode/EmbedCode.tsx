@@ -45,7 +45,7 @@ export class EmbedCode extends React.Component<EmbedCodeProps, EmbedCodeState>{
                 '<div class="meframe"></div>',
                 '<br/>',
                 '<div>',
-                    '<a href="',document.URL,'" target="_blank">',props.locale.campaignName,'</a> by ',
+                    '<a href="',(document.URL).split("#")[0],'" target="_blank">',props.locale.campaignName,'</a> by ',
                     '<a href="',props.locale.clientUrl,'" target="_blank">',props.locale.clientTitle,'</a>',
                 '</div>',
             '</div>',
